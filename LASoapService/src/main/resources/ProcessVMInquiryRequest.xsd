@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://localhost/laservice"
+	targetNamespace="http://localhost/laservice"
+	elementFormDefault="qualified">
+
+
+
+	<xs:element name="vinInquiryRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="inquiryType"/>
+				<xs:element name="vin" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	 <xs:element name="VMInquiryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vinInquiry" type="tns:vinInquiryInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="vinInquiryInfo">
+      <xs:sequence>
+        <xs:element type="xs:string" name="inquiryType"/>
+        <xs:element type="xs:string" name="vin"/>
+        <xs:element type="xs:string" name="flag1"/>
+        <xs:element type="xs:string" name="flag2"/>
+        <xs:element type="xs:string" name="flag3"/>
+        
+      </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
